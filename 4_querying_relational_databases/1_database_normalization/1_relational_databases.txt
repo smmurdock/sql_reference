@@ -1,0 +1,18 @@
+-- WHY WE MAKE DATABASES "RELATIONAL"
+
+-- Benefits
+-- maximizing storage
+-- better application functionality
+-- cleaner, richer data for business reporting
+
+
+-- DATABASE NORMALIZATION
+-- The process of eliminating redundant or repeating data in a database
+-- Helps to conserve disk space
+-- Eliminates the potential for update anomalies and the enforcement of data integrity
+
+
+-- SET THEORY
+-- Result Set - the table you get back from a query
+-- Set - a grouping of similar things
+-- -- they are the foundation of performing useful queries in relational databases 

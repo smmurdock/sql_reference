@@ -1,0 +1,46 @@
+-- WHAT ARE SUBQUERIES?
+
+-- Subqueries are queries within queries. A subquery can also be called an inner query with the "parent" query being called the outer query.
+-- Reasons you may need to use a subquery 
+-- Criteria for a WHERE clause is not specifically known
+-- You need a temporary data set to join with other tables in your database
+
+-- Structure Example:
+SELECT <columns>
+FROM <table 1>
+WHERE Column1 IN (
+    SELECT Column1 
+    FROM Table 2 
+    WHERE <search criteria>
+);
+
+
+-- There are two main ways to use a subquery:
+-- In an IN condition
+-- As a derived or temporary table
+
+-- A subquery in an IN condition must only have one column:
+SELECT <columns> FROM <table 1> WHERE <table 1>.<column> IN (<subquery>);
+SELECT <columns> FROM <table 1> 
+    WHERE <table 1>.<column> IN (SELECT <a single column> FROM <table 2> WHERE <condition>);
+
+-- Examples:
+-- Get a list of user's names and emails for users who have spent over 100 dollars in a single transaction:
+
+SELECT name, email FROM users 
+    WHERE id IN (SELECT DISTINCT(user_id) FROM sales WHERE saleAmount > 100);
+
+-- OR
+
+SELECT name, email FROM users
+    INNER JOIN (SELECT DISTINCT(user_id) FROM sales WHERE saleAmount > 100) AS best_customers
+    ON users.id = best_customers.user_id;
+
+-- Get a list of user's names and emails for users who have spent over 1000 dollars in total:
+SELECT name, email FROM users WHERE id IN (SELECT user_id FROM sales WHERE SUM(saleAmount) > 1000 GROUP BY user_id);
+
+-- OR
+
+SELECT name, email, total FROM users 
+    INNER JOIN (SELECT user_id, SUM(saleAmount) AS total FROM sales WHERE total > 1000 GROUP BY user_id) AS ultimate_customers
+    ON users.id = ultimate_customers.user_id;

@@ -1,0 +1,7 @@
+-- WHAT ARE SET OPERATIONS?
+-- Set operations - combine or limit results using two or more datasets
+
+-- UNION
+-- UNION ALL
+-- INTERSECT 
+-- EXCEPT 

@@ -1,0 +1,8 @@
+-- JOIN QUERIES 
+
+-- join - instruction to the query engine on how to relate records in one table to records in another 
+-- common types 
+-- -- inner join
+-- -- outer join 
+-- does not change original data set, only merges or the result set 
+

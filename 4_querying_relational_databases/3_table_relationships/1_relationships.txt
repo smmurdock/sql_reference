@@ -1,0 +1,25 @@
+-- ONE TO MANY RELATIONSHIPS
+-- most common in relationship database design
+-- many can only happen in one direction
+
+
+-- MANY TO MANY RELATIONSHIPS 
+-- one record in the first table can relate to many records in the second table and one record in the second table can relate back to many records in the first table
+-- orders & parts are a good example of this
+-- usually this means a third table is necessary
+-- -- in orders & parts, order_parts creates two one-to-many relationships 
+-- it's a concept, but it really doesn't work; it just creates the need for more tables and more one-to-many relationships 
+
+
+-- ONE TO ONE RELATIONSHIPS 
+-- one row from one table can only relate to one row on another table 
+-- not super common 
+-- -- boost performance with tables with lots of infrequently used columns 
+-- -- working with 3rd party databases 
+-- customer (read only) & customer_extension (editable)
+
+
+-- MODELING TABLE RELATIONSHIPS 
+-- Entity Relationship Diagrams - ERD 
+-- tables as entities - they later become tables but in design, it's an entity 
+-- Crow's Foot notation - one to many diagrams, one to one diagrams, many to many diagrams

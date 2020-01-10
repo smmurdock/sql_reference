@@ -1,0 +1,24 @@
+-- UNIQUE KEYS
+
+-- a column specifically configured so that no value can be repeated in it
+-- good for id column or unique identifiers like SSN
+-- Can be null
+-- Multiple unique keys per table
+-- Can be modified to a new value
+
+
+-- PRIMARY KEYS
+
+-- unique values 
+-- never be null 
+-- one primary key per table 
+-- cannot be modified to a new value 
+-- Doesn't need to be numeric but is usually set up as an automatically incrementing id 
+
+
+-- FOREIGN KEYS
+
+-- a column or columns that relate records back to the primary key in another table 
+-- columns designed correctly in both tables 
+-- foreign key constraint - a rule a database enforces 
+-- Referential Integrity - FOREIGN key values must also exist as a PRIMARY key value in the reference table 
